@@ -1,0 +1,15 @@
+name: 'Fargate Utility'
+description: 'Set of handful fargate commands'
+branding:
+  color: blue
+  icon: droplet
+inputs:
+  args:
+    description: 'Additional arguments to be passed to fargate command'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'docker://epsyhealth/actions-fargate'
+  args:
+    - ${{ inputs.args }}
